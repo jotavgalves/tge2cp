@@ -1,36 +1,57 @@
-# Preparatório para a 2ª CP de TGE
+# Preparatório para a 2ª CP de TGE — versão corrigida
 
-Projeto Cloudflare Pages + Functions + Supabase.
+## O que subir no GitHub
 
-## Instalação rápida
-1. Rode `supabase/schema.sql` no SQL Editor.
-2. Rode `supabase/seed_tge.sql` para questões exemplo.
-3. Suba todos os arquivos no GitHub ligado ao Cloudflare Pages.
-4. Configure variáveis em Cloudflare Pages > Settings > Environment variables:
+Suba estes arquivos/pastas na raiz:
 
 ```txt
-SUPABASE_URL=https://seu-projeto.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=sua-service-role-key
-SESSION_SECRET=texto-grande-aleatorio
-ADMIN_LOG_PASSWORD=senha-do-painel-log
-LLM_PROVIDERS_JSON=[...]
+index.html
+styles.css
+app.js
+README.md
+wrangler.toml
+functions/
+  log.js
+  api/
+    [[path]].js
+supabase/
+  schema.sql
+  seed_tge.sql
+docs/
+  questions_model.md
 ```
 
-## LLM_PROVIDERS_JSON exemplo
+A pasta deve se chamar `functions`, no plural.
 
-```json
-[
-  {"name":"Gemini","type":"gemini","priority":1,"apiKey":"SUA_KEY","model":"gemini-2.0-flash"},
-  {"name":"Groq","type":"openai_compatible","priority":2,"apiKey":"SUA_KEY","baseUrl":"https://api.groq.com/openai/v1/chat/completions","model":"llama-3.1-8b-instant"},
-  {"name":"NVIDIA NIM","type":"openai_compatible","priority":3,"apiKey":"SUA_KEY","baseUrl":"https://integrate.api.nvidia.com/v1/chat/completions","model":"meta/llama-3.1-70b-instruct"},
-  {"name":"OpenRouter","type":"openai_compatible","priority":4,"apiKey":"SUA_KEY","baseUrl":"https://openrouter.ai/api/v1/chat/completions","model":"google/gemini-2.0-flash-001"},
-  {"name":"Hugging Face","type":"openai_compatible","priority":5,"apiKey":"SUA_KEY","baseUrl":"https://router.huggingface.co/v1/chat/completions","model":"meta-llama/Llama-3.1-8B-Instruct"}
-]
+## Cloudflare Pages
+
+Configuração:
+
+```txt
+Framework preset: None
+Build command: vazio
+Build output directory: .
+Root directory: vazio
 ```
 
-## /log
-Acesse `https://seu-site.pages.dev/log` e use `ADMIN_LOG_PASSWORD`.
+Não use `npx wrangler deploy`.
 
+## Variáveis no Cloudflare
 
-## Segurança
-Não coloque service role nem chaves de IA no HTML. Elas ficam somente nas variáveis do Cloudflare.
+```txt
+SUPABASE_URL
+SUPABASE_SERVICE_ROLE_KEY
+SESSION_SECRET
+ADMIN_LOG_PASSWORD
+LLM_PROVIDERS_JSON
+```
+
+O app já funciona com correção provisória mesmo sem IA real, para você testar login, visitante e ranking primeiro.
+
+## Supabase
+
+Rode no SQL Editor:
+
+1. `supabase/schema.sql`
+2. `supabase/seed_tge.sql`
+
