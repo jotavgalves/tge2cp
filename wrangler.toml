@@ -1,4 +1,3 @@
-name="tge2cp"
-compatibility_date="2026-06-01"
-pages_build_output_dir="."
-
+name = "tge2cp"
+compatibility_date = "2026-06-01"
+pages_build_output_dir = "."
