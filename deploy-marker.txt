@@ -1,0 +1,2 @@
+Forçar redeploy Cloudflare Pages após liberação da versão com IA real, chat e ranking.
+Atualizado em 2026-06-11 12:35 UTC.
