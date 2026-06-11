@@ -31,8 +31,6 @@ LLM_PROVIDERS_JSON=[...]
 ## /log
 Acesse `https://seu-site.pages.dev/log` e use `ADMIN_LOG_PASSWORD`.
 
-## Usuários
-Nicolly/ni123, Joana/jo456, Bianca/bi789, Marina/ma012, João/121225. João é admin.
 
 ## Segurança
 Não coloque service role nem chaves de IA no HTML. Elas ficam somente nas variáveis do Cloudflare.
