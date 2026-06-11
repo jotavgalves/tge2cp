@@ -1,3 +1,7 @@
-# Como escrever questões
+# Modelo de banco de questões
 
-Veja `supabase/seed_tge.sql`. Fechadas precisam de 5 alternativas e uma `is_correct=true`. Abertas precisam de `expected_answer` e `rubric` curta para economizar tokens.
+## Fechada
+Use `tge_questions` com `kind = 'closed'` e cinco linhas em `tge_options`, sendo só uma com `is_correct = true`.
+
+## Aberta
+Use `tge_questions` com `kind = 'open'`, preenchendo `expected_answer` e `rubric`.
